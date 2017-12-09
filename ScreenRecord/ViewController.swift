@@ -83,10 +83,13 @@ class ViewController: UIViewController, RPPreviewViewControllerDelegate {
             }
             
             print("Started Recording Successfully")
-            self.micToggle.isEnabled = false
-            self.recordButton.backgroundColor = UIColor.red
-            self.statusLabel.text = "Recording..."
-            self.statusLabel.textColor = UIColor.red
+            
+            DispatchQueue.main.async {
+                self.micToggle.isEnabled = false
+                self.recordButton.backgroundColor = UIColor.red
+                self.statusLabel.text = "Recording..."
+                self.statusLabel.textColor = UIColor.red
+            }
             
             self.isRecording = true
 
